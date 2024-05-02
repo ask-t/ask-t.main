@@ -7,22 +7,31 @@ const Education = () => {
   const base: string = "https://drive.google.com/uc?export=view&id=";
   const info = [
     {
-      title: "Enterprise Informaiton Systems",
-      date: "May 2022 - Present",
-      image: `${base}1PVtUgmJvOCOHw2C1FCnCLeHN86wbuAri`,
-      description: "I am a full stack web developer with a passion for creating interactive and responsive web applications.I have experience working with JavaScript, React, Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS, and Git.I am a quick learner and I am always looking to expand my knowledge and skill set.I am a team player and I am excited to work with others to create amazing applications."
+      title: "Brigham Young University – Hawaii",
+      position: "Bachelor of Science: Computer Science",
+      date: "Jan 2022 - Dec 2025",
+      image: `${base}1tAKIGObxdr13be9NpJI3p8pWBAIqGyyB`,
+      description: ""
     },
     {
-      title: "TESTTEST",
-      date: "Jan 2022 - Apr 2022",
-      image: `${base}1PVtUgmJvOCOHw2C1FCnCLeHN86wbuAri`,
-      description: "I am a full stack web developer with a passion for creating interactive and responsive web applications.I have experience working with JavaScript, React, Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS, and Git.I am a quick learner and I am always looking to expand my knowledge and skill set.I am a team player and I am excited to work with others to create amazing applications."
+      title: "",
+      position: "Music: Piano Performance Minor",
+      date: "",
+      image: `${base}1Oe-4IhGv3bvbcEXgp67TXL1b3-7aRoLt`,
+      description: ""
+    },
+    {
+      title: "",
+      position: "Social Work Minor",
+      date: "",
+      image: `${base}1X39o03StOdYZcXvRgvR5ljLk3Sdf60PE`,
+      description: ""
     },
   ]
   return (
-    <div className="container">
+    <div className="container" id="education">
       <h2 className="text-4xl font-bold text-white mb-4 pb-10">Education</h2>
-      <section className="text-white" id="Experience">
+      <section className="text-white" id="Education">
         {info.map((item, index) => (
           <div key={index}>
             {index % 2 === 0 ?
@@ -31,6 +40,7 @@ const Education = () => {
                   <Image src={item.image} width={700} height={700} alt={""} />
                   <div className="mt-4 md:mt-0 flex flex-col h-full">
                     <h2 className="text-left text-3xl font-bold text-white mb-4">{item.title}</h2>
+                    <p className="text-left italic text-xl font-bold mb-3">{item.position}</p>
                     <p className="text-right italic">{item.date}</p>
                     <p className="text-base lg:text-lg">
                       {item.description}
@@ -42,6 +52,7 @@ const Education = () => {
                 <div className="md:grid md:grid-cols-2 gap-8 space-y-10 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
                   <div className="mt-4 md:mt-0 flex flex-col h-full">
                     <h2 className="text-left text-3xl font-bold text-white mb-4">{item.title}</h2>
+                    <p className="text-left italic text-xl font-bold mb-3">{item.position}</p>
                     <div className="text-right italic">{item.date}</div>
                     <p className="text-base lg:text-lg">
                       {item.description}

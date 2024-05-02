@@ -21,8 +21,8 @@ const Skill = () => {
   ];
 
   return (
-    <div className='container'>
-      <h2 className="text-4xl font-bold text-white mb-4 pb-10">Skill</h2>
+    <div className='container' id="skill">
+      <h2 className="text-4xl font-bold text-white mb-4 pb-10">Skills</h2>
       <div className="grid grid-cols-3 gap-10 sm:grid-cols-2 md:grid-cols-5">
         {languages.map(lang => (
           <div key={lang.name} className="flex flex-col items-center ">

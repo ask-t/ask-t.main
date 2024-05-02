@@ -20,9 +20,9 @@ const HeroSection = () => {
               sequence={[
                 "Asuku Takahashi",
                 3000,
-                "CS Student",
+                "a CS Student",
                 3000,
-                "Web Developer",
+                "a Web Developer",
                 3000,
               ]}
               wrapper="span"
@@ -30,10 +30,10 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
-          </p>
+          <div className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+            -Engineers like to solve problems. If there are no problems handily available, they will create their own problems.-
+          </div>
+          <div className="text-right">- Scott Adams </div>
 
         </div>
         <div className="col-span-4 place-self-center mt-4 lg:mt-0"

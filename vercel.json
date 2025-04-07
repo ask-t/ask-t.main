@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/info-canvas/:path*",
+      "destination": "https://info-canvas.vercel.app/:path*"
+    },
+    {
+      "source": "/music465/:path*",
+      "destination": "https://music465-unit1.vercel.app/:path*"
+    }
+  ]
+}

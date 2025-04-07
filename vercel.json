@@ -5,8 +5,16 @@
       "destination": "https://info-canvas.vercel.app/:path*"
     },
     {
+      "source": "/info-canvas",
+      "destination": "https://info-canvas.vercel.app/"
+    },
+    {
       "source": "/music465/:path*",
       "destination": "https://music465-unit1.vercel.app/:path*"
+    },
+    {
+      "source": "/music465",
+      "destination": "https://music465-unit1.vercel.app/"
     }
   ]
 }

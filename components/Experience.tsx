@@ -8,7 +8,7 @@ const Experience = () => {
   const base: string = "https://drive.google.com/uc?export=view&id=";
   const info = [
     {
-      title: "Enterprise Informaiton Systems",
+      title: "Enterprise Information Systems",
       position: "Student Developer/Analyst",
       date: "May 2022 - Present",
       image: `${base}1BdxxJkwQ_IS5J5QJ4apx1IYl2i88fzpY`,

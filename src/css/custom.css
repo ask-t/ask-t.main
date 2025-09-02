@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind CSS v4でカスタムカラーは自動で生成されるため、この部分は削除 */
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Infima（既定テーマ）のトークンを最小限だけ上書きして統一 */
+:root {
+  --ifm-font-family-base: Inter, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-container-width-xl: 1280px;
+  /* container幅合わせ */
+  --ifm-color-primary: #121212;
+  /* リンク色など：モノクロ寄せ */
+  --ifm-color-primary-dark: #0b0b0b;
+}
+
+/* 本文の配色と余白（ライト/ダーク両対応） */
+html[data-theme='light'] body {
+  @apply bg-white text-gray-800 antialiased;
+}
+
+html[data-theme='dark'] body {
+  @apply bg-gray-900 text-white antialiased;
+}
+
+/* Markdown本文を読みやすく（typography） */
+.markdown {
+  @apply prose prose-neutral max-w-none;
+}
+
+html[data-theme='dark'] .markdown {
+  @apply prose-invert;
+}
+
+/* フォーカスリングを統一 */
+:root {
+  --ring: rgba(59, 130, 246, 0.35);
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-offset-2 ring-offset-white;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* カスタムアニメーション */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* ホバーエフェクト */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* グラデーション背景 */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ダークモード対応 */
+html[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+html[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* レスポンシブタイポグラフィ */
+@media (max-width: 768px) {
+  .text-responsive-xl {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .text-responsive-lg {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+/* カードホバーエフェクト */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ボタンホバーエフェクト */
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-hover:hover::before {
+  left: 100%;
+}

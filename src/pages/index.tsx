@@ -1,76 +1,76 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import Layout from '@theme/Layout';
 import ProjectCard from '@site/src/components/ui/ProjectCard';
 import ArticleCard from '@site/src/components/ui/ArticleCard';
 
 export default function Home(): JSX.Element {
-  // 最新プロジェクト3件
+  // Featured Projects
   const featuredProjects = [
     {
-      title: 'E-commerce Platform',
-      description: 'Modern e-commerce solution built with Next.js, TypeScript, and Tailwind CSS. Features include product catalog, shopping cart, payment integration, and admin dashboard.',
-      tags: ['E-commerce', 'Full-stack'],
-      role: 'Lead Developer',
-      stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Prisma'],
+      title: 'Next-Gen E-commerce Platform',
+      description: 'Revolutionary e-commerce solution featuring AI-powered product recommendations, real-time inventory management, and multi-channel payment integration. Built with scalable architecture capable of handling 1M+ monthly page views.',
+      tags: ['E-commerce', 'AI/ML', 'Scalability'],
+      role: 'Technical Lead',
+      stack: ['Next.js 14', 'TypeScript', 'Prisma', 'PostgreSQL', 'Redis', 'Stripe'],
       image: '/images/gallery/image1.png',
-      link: 'https://example-ecommerce.com',
-      github: 'https://github.com/username/ecommerce-platform',
+      link: 'https://nextgen-ecommerce.com',
+      github: 'https://github.com/ask-t/nextgen-ecommerce',
     },
     {
-      title: 'Design System',
-      description: 'Comprehensive design system with reusable components and documentation. Built for consistency across multiple products and teams.',
-      tags: ['Design System', 'Documentation'],
-      role: 'Design Engineer',
-      stack: ['React', 'Storybook', 'Figma', 'TypeScript'],
+      title: 'Enterprise Design System',
+      description: 'Comprehensive design system for large-scale enterprises. Features 50+ reusable components, automated accessibility testing, and multilingual documentation. Achieved 40% improvement in development efficiency.',
+      tags: ['Design System', 'Enterprise', 'Accessibility'],
+      role: 'Design System Architect',
+      stack: ['React', 'Storybook', 'Figma', 'TypeScript', 'Jest', 'Playwright'],
       image: '/images/gallery/image2.png',
-      link: 'https://design-system.example.com',
-      github: 'https://github.com/username/design-system',
+      link: 'https://enterprise-design-system.com',
+      github: 'https://github.com/ask-t/enterprise-design-system',
     },
     {
-      title: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with interactive charts and data visualization. Built for monitoring key business metrics and user behavior.',
-      tags: ['Analytics', 'Data Visualization'],
-      role: 'Frontend Developer',
-      stack: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
+      title: 'Real-time Analytics Platform',
+      description: 'Enterprise-grade real-time analytics platform with big data processing, interactive dashboards, and predictive analytics capabilities. Achieved 300% improvement in data processing speed.',
+      tags: ['Analytics', 'Big Data', 'Real-time'],
+      role: 'Full-stack Developer',
+      stack: ['React', 'D3.js', 'Node.js', 'Apache Kafka', 'ClickHouse', 'Docker'],
       image: '/images/gallery/image3.png',
-      link: 'https://analytics.example.com',
-      github: 'https://github.com/username/analytics-dashboard',
+      link: 'https://realtime-analytics.com',
+      github: 'https://github.com/ask-t/realtime-analytics',
     },
   ];
 
-  // 最新記事3本
+  // Technical Articles
   const recentArticles = [
     {
-      title: 'Building Scalable React Applications',
-      excerpt: 'Learn how to structure and organize React applications for long-term maintainability and team collaboration.',
+      title: 'E-commerce Platform Architecture: From MVP to Scale',
+      excerpt: 'Deep dive into building large-scale e-commerce platforms. Covers microservices architecture, database design, and performance optimization with practical implementation approaches.',
       date: '2024-01-15',
-      readTime: '8 min read',
-      tags: ['React', 'Architecture', 'Best Practices'],
-      slug: 'building-scalable-react-applications',
-      image: '/img/blog/react-architecture.jpg',
+      readTime: '12 min read',
+      tags: ['E-commerce', 'Architecture', 'Scalability'],
+      slug: 'ecommerce-platform-architecture',
+      image: '/img/blog/ecommerce-architecture.jpg',
     },
     {
-      title: 'Design Systems in Practice',
-      excerpt: 'A deep dive into creating and maintaining design systems that actually work for development teams.',
+      title: 'Building Enterprise Design Systems: Lessons Learned',
+      excerpt: 'Insights from real-world enterprise design system implementation. Shares best practices for component design, documentation strategy, and team adoption.',
       date: '2024-01-10',
-      readTime: '6 min read',
-      tags: ['Design Systems', 'UI/UX', 'Development'],
-      slug: 'design-systems-in-practice',
-      image: '/img/blog/design-systems.jpg',
+      readTime: '9 min read',
+      tags: ['Design Systems', 'Enterprise', 'Best Practices'],
+      slug: 'enterprise-design-systems-lessons',
+      image: '/img/blog/enterprise-design-systems.jpg',
     },
     {
-      title: 'Performance Optimization Techniques',
-      excerpt: 'Essential techniques for optimizing web application performance, from bundle size to runtime optimization.',
+      title: 'Real-time Data Processing: Building Analytics at Scale',
+      excerpt: 'Technical deep-dive into real-time data processing systems. Covers Apache Kafka, streaming processing, and dashboard optimization with detailed implementation strategies.',
       date: '2024-01-05',
-      readTime: '10 min read',
-      tags: ['Performance', 'Optimization', 'Web Development'],
-      slug: 'performance-optimization-techniques',
-      image: '/img/blog/performance-optimization.jpg',
+      readTime: '15 min read',
+      tags: ['Real-time', 'Data Processing', 'Analytics'],
+      slug: 'realtime-data-processing-analytics',
+      image: '/img/blog/realtime-analytics.jpg',
     },
   ];
 
   return (
-    <Layout title="ask-t | Frontend Developer & Designer" description="Creating exceptional user experiences through clean code and thoughtful design">
+    <Layout title="ask-t | Innovative Web Projects" description="Discover cutting-edge web applications and digital solutions that push the boundaries of modern development">
       <main>
         {/* Hero Section */}
         <section className="hero-section min-h-screen flex items-center">
@@ -78,20 +78,20 @@ export default function Home(): JSX.Element {
             <div className="max-w-4xl mx-auto text-center">
               <div className="animate-fade-in-up">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-[var(--fg)] mb-6">
-                  Frontend Developer
+                  Innovative Web
                   <br />
-                  <span className="text-[var(--accent)]">& Designer</span>
+                  <span className="text-[var(--fg)]">Projects</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-[var(--muted)] mb-8 max-w-3xl mx-auto leading-relaxed">
-                  Creating exceptional user experiences through clean code and thoughtful design.
-                  Passionate about building scalable web applications with modern technologies.
+                  Discover cutting-edge web applications and digital solutions that push the boundaries of modern development.
+                  From e-commerce platforms to design systems, explore projects that make a real impact.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="/projects" className="btn-primary">
-                    View Projects
+                    Explore Projects
                   </a>
                   <a href="/blog" className="btn-secondary">
-                    Read Articles
+                    Technical Insights
                   </a>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function Home(): JSX.Element {
                 Featured Projects
               </h2>
               <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-                A selection of recent projects showcasing modern web development practices and design principles.
+                Showcasing innovative projects built with cutting-edge technologies. Focus on scalability, performance, and exceptional user experiences.
               </p>
             </div>
 
@@ -136,10 +136,10 @@ export default function Home(): JSX.Element {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)] mb-4">
-                Recent Writing
+                Technical Insights
               </h2>
               <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-                Thoughts on web development, design systems, and the latest in frontend technology.
+                Technical articles based on real-world project development experience. Deep insights into architecture design, performance optimization, and modern technology implementation.
               </p>
             </div>
 
@@ -157,7 +157,7 @@ export default function Home(): JSX.Element {
 
             <div className="text-center mt-12">
               <a href="/blog" className="btn-secondary">
-                Read All Articles
+                View All Technical Articles
               </a>
             </div>
           </div>
@@ -167,17 +167,18 @@ export default function Home(): JSX.Element {
         <section className="container mx-auto px-4 py-24">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--fg)] mb-6">
-              Let's Work Together
+              Start Your Next Project
             </h2>
             <p className="text-xl text-[var(--muted)] mb-8">
-              I'm always interested in new opportunities and exciting projects.
+              Let's build innovative web applications and digital solutions together.
+              Creating scalable, high-performance projects that make a real impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:hello@example.com" className="btn-primary">
-                Get in Touch
+              <a href="mailto:projects@ask-t.com" className="btn-primary">
+                Discuss Your Project
               </a>
-              <a href="/docs/intro" className="btn-secondary">
-                View Documentation
+              <a href="/projects" className="btn-secondary">
+                View All Projects
               </a>
             </div>
           </div>

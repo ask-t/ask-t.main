@@ -56,7 +56,7 @@ export default function Profile(): JSX.Element {
   ];
 
   return (
-    <Layout title="Profile | ASUKU" description="Professional profile and experience">
+    <Layout title="Profile | ask-t" description="Professional profile and experience">
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="container py-24 md:py-32">

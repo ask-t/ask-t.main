@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'ask-t',
+  tagline: 'Frontend Developer & Designer',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -45,12 +45,20 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          feedOptions: {
+            type: 'all',
+            title: 'ask-t Blog',
+            description: 'Frontend development insights and thoughts',
+            copyright: `Copyright © ${new Date().getFullYear()} ask-t.`,
+            language: 'en',
+          },
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -59,22 +67,35 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
     navbar: {
-      title: 'ASUKU',
+      title: 'ask-t',
+      hideOnScroll: true,
       items: [
         { to: '/', label: 'Home', position: 'left' },
-        { to: '/profile', label: 'Profile', position: 'left' },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/projects', label: 'Projects', position: 'left' },
+        { to: '/blog', label: 'Writing', position: 'left' },
         { to: '/docs/intro', label: 'Docs', position: 'left' },
         { href: 'mailto:you@example.com', label: 'Contact', position: 'right' },
       ],
     },
     footer: {
-      style: 'light',
+      style: 'dark',
       links: [
-        { title: 'Explore', items: [{ label: 'Work', to: '/' }, { label: 'Docs', to: '/docs/intro' }] },
-        { title: 'Social', items: [{ label: 'GitHub', href: 'https://github.com/...' }] },
+        { title: 'Work', items: [{ label: 'Projects', to: '/projects' }, { label: 'Writing', to: '/blog' }] },
+        { title: 'Connect', items: [{ label: 'GitHub', href: 'https://github.com/...' }, { label: 'Twitter', href: 'https://twitter.com/...' }] },
       ],
+      copyright: `Copyright © ${new Date().getFullYear()} ask-t. Built with Docusaurus.`,
+    },
+    algolia: {
+      // Algolia検索の設定（オプション）
+      appId: 'YOUR_APP_ID',
+      apiKey: 'YOUR_SEARCH_API_KEY',
+      indexName: 'YOUR_INDEX_NAME',
     },
   }
 };

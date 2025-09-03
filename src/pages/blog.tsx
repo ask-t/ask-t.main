@@ -68,7 +68,7 @@ export default function Blog(): JSX.Element {
   const categories = ['All', 'Development', 'Design', 'Technology', 'Performance', 'Tutorial', 'CSS', 'Accessibility'];
 
   return (
-    <Layout title="Blog | ASUKU" description="Thoughts on web development, design, and technology">
+    <Layout title="Blog | ask-t" description="Thoughts on web development, design, and technology">
       <main className="min-h-screen">
         {/* Hero Section */}
         <section className="container py-24 md:py-32">

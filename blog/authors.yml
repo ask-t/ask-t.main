@@ -17,9 +17,19 @@ slorber:
   image_url: https://github.com/slorber.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
-    permalink: '/all-sebastien-lorber-articles'
+    permalink: "/all-sebastien-lorber-articles"
   socials:
     x: sebastienlorber
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+ask-t:
+  name: ask-t
+  title: Frontend Developer & Designer
+  url: https://github.com/asktakahashi
+  image_url: https://github.com/asktakahashi.png
+  page: true
+  socials:
+    github: asktakahashi
+    linkedin: asktakahashi

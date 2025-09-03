@@ -2,72 +2,12 @@ import React, { JSX } from 'react';
 import Layout from '@theme/Layout';
 import ProjectCard from '@site/src/components/ui/ProjectCard';
 import ArticleCard from '@site/src/components/ui/ArticleCard';
+import projectsData from '@site/src/data/projects.json';
+import articlesData from '@site/src/data/articles.json';
 
 export default function Home(): JSX.Element {
-  // Featured Projects
-  const featuredProjects = [
-    {
-      title: 'Next-Gen E-commerce Platform',
-      description: 'Revolutionary e-commerce solution featuring AI-powered product recommendations, real-time inventory management, and multi-channel payment integration. Built with scalable architecture capable of handling 1M+ monthly page views.',
-      tags: ['E-commerce', 'AI/ML', 'Scalability'],
-      role: 'Technical Lead',
-      stack: ['Next.js 14', 'TypeScript', 'Prisma', 'PostgreSQL', 'Redis', 'Stripe'],
-      image: '/images/gallery/image1.png',
-      link: 'https://nextgen-ecommerce.com',
-      github: 'https://github.com/ask-t/nextgen-ecommerce',
-    },
-    {
-      title: 'Enterprise Design System',
-      description: 'Comprehensive design system for large-scale enterprises. Features 50+ reusable components, automated accessibility testing, and multilingual documentation. Achieved 40% improvement in development efficiency.',
-      tags: ['Design System', 'Enterprise', 'Accessibility'],
-      role: 'Design System Architect',
-      stack: ['React', 'Storybook', 'Figma', 'TypeScript', 'Jest', 'Playwright'],
-      image: '/images/gallery/image2.png',
-      link: 'https://enterprise-design-system.com',
-      github: 'https://github.com/ask-t/enterprise-design-system',
-    },
-    {
-      title: 'Real-time Analytics Platform',
-      description: 'Enterprise-grade real-time analytics platform with big data processing, interactive dashboards, and predictive analytics capabilities. Achieved 300% improvement in data processing speed.',
-      tags: ['Analytics', 'Big Data', 'Real-time'],
-      role: 'Full-stack Developer',
-      stack: ['React', 'D3.js', 'Node.js', 'Apache Kafka', 'ClickHouse', 'Docker'],
-      image: '/images/gallery/image3.png',
-      link: 'https://realtime-analytics.com',
-      github: 'https://github.com/ask-t/realtime-analytics',
-    },
-  ];
-
-  // Technical Articles
-  const recentArticles = [
-    {
-      title: 'E-commerce Platform Architecture: From MVP to Scale',
-      excerpt: 'Deep dive into building large-scale e-commerce platforms. Covers microservices architecture, database design, and performance optimization with practical implementation approaches.',
-      date: '2024-01-15',
-      readTime: '12 min read',
-      tags: ['E-commerce', 'Architecture', 'Scalability'],
-      slug: 'ecommerce-platform-architecture',
-      image: '/img/blog/ecommerce-architecture.jpg',
-    },
-    {
-      title: 'Building Enterprise Design Systems: Lessons Learned',
-      excerpt: 'Insights from real-world enterprise design system implementation. Shares best practices for component design, documentation strategy, and team adoption.',
-      date: '2024-01-10',
-      readTime: '9 min read',
-      tags: ['Design Systems', 'Enterprise', 'Best Practices'],
-      slug: 'enterprise-design-systems-lessons',
-      image: '/img/blog/enterprise-design-systems.jpg',
-    },
-    {
-      title: 'Real-time Data Processing: Building Analytics at Scale',
-      excerpt: 'Technical deep-dive into real-time data processing systems. Covers Apache Kafka, streaming processing, and dashboard optimization with detailed implementation strategies.',
-      date: '2024-01-05',
-      readTime: '15 min read',
-      tags: ['Real-time', 'Data Processing', 'Analytics'],
-      slug: 'realtime-data-processing-analytics',
-      image: '/img/blog/realtime-analytics.jpg',
-    },
-  ];
+  const { featuredProjects } = projectsData;
+  const { recentArticles } = articlesData;
 
   return (
     <Layout title="ask-t | Innovative Web Projects" description="Discover cutting-edge web applications and digital solutions that push the boundaries of modern development">

@@ -1,71 +1,89 @@
-import React from 'react';
+import React, { JSX, useState } from 'react';
 import Layout from '@theme/Layout';
 import Button from '@site/src/components/ui/Button';
 import { Card } from '@site/src/components/ui/Card';
 
 export default function Blog(): JSX.Element {
-  const featuredPost = {
-    title: 'Building Modern Web Applications with React and TypeScript',
-    excerpt: 'Learn how to create scalable and maintainable web applications using React, TypeScript, and modern development practices.',
-    date: '2024-01-15',
-    readTime: '8 min read',
-    category: 'Development',
-    image: '/img/blog/featured-post.jpg',
-    slug: 'building-modern-web-applications',
-  };
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const categories = [
+    { name: 'All', slug: 'all', count: 6 },
+    { name: 'Frontend Development', slug: 'frontend-development', count: 1 },
+    { name: 'Design Systems', slug: 'design-systems', count: 1 },
+    { name: 'Architecture', slug: 'architecture', count: 1 },
+    { name: 'Performance', slug: 'performance', count: 1 },
+    { name: 'AI & ML', slug: 'ai-ml', count: 1 },
+    { name: 'Career', slug: 'career', count: 1 },
+  ];
 
   const blogPosts = [
     {
-      title: 'The Future of Frontend Development',
-      excerpt: 'Exploring emerging trends and technologies that will shape the future of frontend development.',
+      title: 'Building Scalable React Applications',
+      excerpt: 'Learn how to structure and organize React applications for long-term maintainability and team collaboration.',
+      date: '2024-01-15',
+      readTime: '8 min read',
+      category: 'Frontend Development',
+      categorySlug: 'frontend-development',
+      slug: 'building-scalable-react-applications',
+      image: '/img/blog/react-architecture.jpg',
+    },
+    {
+      title: 'Design Systems in Practice',
+      excerpt: 'A deep dive into creating and maintaining design systems that actually work for development teams.',
       date: '2024-01-10',
-      readTime: '5 min read',
-      category: 'Technology',
-      slug: 'future-of-frontend-development',
-    },
-    {
-      title: 'Design Systems: Building Consistency at Scale',
-      excerpt: 'How to create and maintain design systems that ensure consistency across large teams and products.',
-      date: '2024-01-05',
       readTime: '6 min read',
-      category: 'Design',
-      slug: 'design-systems-building-consistency',
+      category: 'Design Systems',
+      categorySlug: 'design-systems',
+      slug: 'design-systems-in-practice',
+      image: '/img/blog/design-systems.jpg',
     },
     {
-      title: 'Performance Optimization Techniques',
-      excerpt: 'Practical strategies for improving web application performance and user experience.',
-      date: '2023-12-28',
+      title: 'Microservices Architecture: Best Practices',
+      excerpt: 'Exploring the principles and practices for building scalable microservices architectures.',
+      date: '2024-01-05',
+      readTime: '10 min read',
+      category: 'Architecture',
+      categorySlug: 'architecture',
+      slug: 'microservices-architecture',
+      image: '/img/blog/microservices.jpg',
+    },
+    {
+      title: 'Web Performance Optimization Techniques',
+      excerpt: 'Essential techniques for optimizing web application performance, from bundle size to runtime optimization.',
+      date: '2024-01-01',
       readTime: '7 min read',
       category: 'Performance',
-      slug: 'performance-optimization-techniques',
+      categorySlug: 'performance',
+      slug: 'web-performance-optimization',
+      image: '/img/blog/performance-optimization.jpg',
     },
     {
-      title: 'Getting Started with Next.js 14',
-      excerpt: 'A comprehensive guide to building modern web applications with the latest version of Next.js.',
-      date: '2023-12-20',
-      readTime: '10 min read',
-      category: 'Tutorial',
-      slug: 'getting-started-nextjs-14',
+      title: 'AI in Web Development: Current Trends and Future',
+      excerpt: 'Exploring how artificial intelligence is transforming web development and what the future holds.',
+      date: '2024-01-20',
+      readTime: '12 min read',
+      category: 'AI & ML',
+      categorySlug: 'ai-ml',
+      slug: 'ai-in-web-development',
+      image: '/img/blog/ai-web-development.jpg',
     },
     {
-      title: 'CSS Grid vs Flexbox: When to Use What',
-      excerpt: 'Understanding the differences between CSS Grid and Flexbox and when to use each layout method.',
-      date: '2023-12-15',
-      readTime: '4 min read',
-      category: 'CSS',
-      slug: 'css-grid-vs-flexbox',
-    },
-    {
-      title: 'Building Accessible Web Applications',
-      excerpt: 'Best practices for creating web applications that are accessible to all users.',
-      date: '2023-12-10',
-      readTime: '9 min read',
-      category: 'Accessibility',
-      slug: 'building-accessible-web-applications',
+      title: 'Frontend Developer Career Path: A Complete Guide',
+      excerpt: 'A comprehensive guide to building a successful career as a frontend developer.',
+      date: '2024-01-25',
+      readTime: '15 min read',
+      category: 'Career',
+      categorySlug: 'career',
+      slug: 'frontend-developer-career-path',
+      image: '/img/blog/career-path.jpg',
     },
   ];
 
-  const categories = ['All', 'Development', 'Design', 'Technology', 'Performance', 'Tutorial', 'CSS', 'Accessibility'];
+  const filteredPosts = selectedCategory === 'All'
+    ? blogPosts
+    : blogPosts.filter(post => post.categorySlug === selectedCategory);
+
+  const featuredPost = blogPosts[0];
 
   return (
     <Layout title="Blog | ask-t" description="Thoughts on web development, design, and technology">
@@ -73,12 +91,12 @@ export default function Blog(): JSX.Element {
         {/* Hero Section */}
         <section className="container py-24 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-              Blog
+            <h1 className="text-4xl md:text-6xl font-bold text-[var(--fg)] mb-6">
+              Technical Blog
             </h1>
-            <p className="text-xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-              Thoughts on web development, design, and technology.
-              Sharing insights and experiences from building modern web applications.
+            <p className="text-xl text-[var(--muted)] mb-8 max-w-2xl mx-auto">
+              Insights on web development, architecture, and technology.
+              Explore articles across different categories and skill levels.
             </p>
           </div>
         </section>
@@ -86,7 +104,7 @@ export default function Blog(): JSX.Element {
         {/* Featured Post */}
         <section className="container py-16">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Featured Post</h2>
+            <h2 className="text-2xl font-bold text-[var(--fg)] mb-8">Featured Post</h2>
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 h-64 lg:h-full flex items-center justify-center">
@@ -94,22 +112,22 @@ export default function Blog(): JSX.Element {
                 </div>
                 <div className="p-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="text-sm text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+                    <span className="text-sm text-[var(--muted)] bg-[var(--hover-bg)] px-3 py-1 rounded-full">
                       {featuredPost.category}
                     </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="text-sm text-[var(--muted)]">
                       {featuredPost.readTime}
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[var(--fg)] mb-4">
                     {featuredPost.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  <p className="text-[var(--muted)] mb-6">
                     {featuredPost.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {new Date(featuredPost.date).toLocaleDateString('ja-JP', {
+                    <span className="text-sm text-[var(--muted)]">
+                      {new Date(featuredPost.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
                         day: 'numeric'
@@ -131,13 +149,14 @@ export default function Blog(): JSX.Element {
             <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
                 <button
-                  key={category}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${category === 'All'
-                    ? 'bg-gray-900 dark:bg-white text-white dark:text-gray-900'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                  key={category.slug}
+                  onClick={() => setSelectedCategory(category.slug)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedCategory === category.slug
+                      ? 'bg-[var(--accent)] text-white'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                     }`}
                 >
-                  {category}
+                  {category.name} ({category.count})
                 </button>
               ))}
             </div>
@@ -147,27 +166,29 @@ export default function Blog(): JSX.Element {
         {/* Blog Posts Grid */}
         <section className="container py-16">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">All Posts</h2>
+            <h2 className="text-2xl font-bold text-[var(--fg)] mb-8">
+              {selectedCategory === 'All' ? 'All Posts' : `${categories.find(c => c.slug === selectedCategory)?.name} Posts`}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post, index) => (
+              {filteredPosts.map((post, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow group">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">
+                    <span className="text-xs text-[var(--muted)] bg-[var(--hover-bg)] px-2 py-1 rounded">
                       {post.category}
                     </span>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
+                    <span className="text-xs text-[var(--muted)]">
                       {post.readTime}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-[var(--fg)] mb-3 group-hover:text-[var(--accent)] transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  <p className="text-[var(--muted)] mb-4 text-sm">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
-                      {new Date(post.date).toLocaleDateString('ja-JP', {
+                    <span className="text-xs text-[var(--muted)]">
+                      {new Date(post.date).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric'
@@ -187,10 +208,10 @@ export default function Blog(): JSX.Element {
         <section className="container py-16">
           <div className="max-w-4xl mx-auto">
             <Card className="text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--fg)] mb-4">
                 Stay Updated
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
+              <p className="text-[var(--muted)] mb-8">
                 Get the latest posts and insights delivered to your inbox.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

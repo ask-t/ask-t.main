@@ -1,59 +1,11 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import Layout from '@theme/Layout';
 import Button from '@site/src/components/ui/Button';
 import { Card } from '@site/src/components/ui/Card';
+import profileData from '@site/src/data/profile.json';
 
 export default function Profile(): JSX.Element {
-  const skills = [
-    { name: 'Frontend Development', level: 'Expert' },
-    { name: 'React & Next.js', level: 'Expert' },
-    { name: 'TypeScript', level: 'Advanced' },
-    { name: 'UI/UX Design', level: 'Advanced' },
-    { name: 'Node.js', level: 'Intermediate' },
-    { name: 'Python', level: 'Intermediate' },
-  ];
-
-  const experience = [
-    {
-      company: 'Tech Company',
-      role: 'Senior Frontend Developer',
-      period: '2022 - Present',
-      description: 'Leading frontend development for web applications using React, TypeScript, and modern development practices.',
-    },
-    {
-      company: 'Startup Inc.',
-      role: 'Full Stack Developer',
-      period: '2020 - 2022',
-      description: 'Developed full-stack applications and contributed to product strategy and user experience design.',
-    },
-    {
-      company: 'Digital Agency',
-      role: 'Frontend Developer',
-      period: '2019 - 2020',
-      description: 'Created responsive websites and web applications for various clients across different industries.',
-    },
-  ];
-
-  const projects = [
-    {
-      title: 'E-commerce Platform',
-      description: 'Modern e-commerce solution built with Next.js, TypeScript, and Tailwind CSS.',
-      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-      link: '#',
-    },
-    {
-      title: 'Design System',
-      description: 'Comprehensive design system with reusable components and documentation.',
-      tech: ['React', 'Storybook', 'Figma', 'TypeScript'],
-      link: '#',
-    },
-    {
-      title: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with interactive charts and data visualization.',
-      tech: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
-      link: '#',
-    },
-  ];
+  const { skills, experience, profileProjects } = profileData;
 
   return (
     <Layout title="Profile | ask-t" description="Professional profile and experience">
@@ -143,7 +95,7 @@ export default function Profile(): JSX.Element {
               Featured Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
+              {profileProjects.map((project, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow group">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
                     {project.title}

@@ -1,70 +1,10 @@
-import React from 'react';
+import React, { JSX } from 'react';
 import Layout from '@theme/Layout';
 import ProjectCard from '@site/src/components/ui/ProjectCard';
+import projectsData from '@site/src/data/projects.json';
 
 export default function Projects(): JSX.Element {
-  const allProjects = [
-    {
-      title: 'E-commerce Platform',
-      description: 'Modern e-commerce solution built with Next.js, TypeScript, and Tailwind CSS. Features include product catalog, shopping cart, payment integration, and admin dashboard.',
-      tags: ['E-commerce', 'Full-stack'],
-      role: 'Lead Developer',
-      stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe', 'Prisma'],
-      image: '/static/images/gallery/image4.png',
-      link: 'https://example-ecommerce.com',
-      github: 'https://github.com/username/ecommerce-platform',
-    },
-    {
-      title: 'Design System',
-      description: 'Comprehensive design system with reusable components and documentation. Built for consistency across multiple products and teams.',
-      tags: ['Design System', 'Documentation'],
-      role: 'Design Engineer',
-      stack: ['React', 'Storybook', 'Figma', 'TypeScript'],
-      image: '/static/images/gallery/image5.png',
-      link: 'https://design-system.example.com',
-      github: 'https://github.com/username/design-system',
-    },
-    {
-      title: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with interactive charts and data visualization. Built for monitoring key business metrics and user behavior.',
-      tags: ['Analytics', 'Data Visualization'],
-      role: 'Frontend Developer',
-      stack: ['React', 'D3.js', 'Node.js', 'PostgreSQL'],
-      image: '/static/images/gallery/image6.png',
-      link: 'https://analytics.example.com',
-      github: 'https://github.com/username/analytics-dashboard',
-    },
-    {
-      title: 'Mobile Banking App',
-      description: 'Secure mobile banking application with biometric authentication, real-time transactions, and comprehensive financial management features.',
-      tags: ['Mobile', 'Fintech', 'Security'],
-      role: 'Frontend Developer',
-      stack: ['React Native', 'TypeScript', 'Redux', 'Jest'],
-      image: '/img/projects/banking-app-preview.jpg',
-      link: 'https://banking-app.example.com',
-      github: 'https://github.com/username/banking-app',
-    },
-    {
-      title: 'Content Management System',
-      description: 'Headless CMS with real-time collaboration, version control, and multi-channel publishing capabilities.',
-      tags: ['CMS', 'Collaboration', 'API'],
-      role: 'Full-stack Developer',
-      stack: ['Next.js', 'Node.js', 'MongoDB', 'GraphQL'],
-      image: '/img/projects/cms-preview.jpg',
-      link: 'https://cms.example.com',
-      github: 'https://github.com/username/cms',
-    },
-    {
-      title: 'Learning Management Platform',
-      description: 'Interactive learning platform with video streaming, progress tracking, and AI-powered recommendations.',
-      tags: ['EdTech', 'Video Streaming', 'AI'],
-      role: 'Frontend Developer',
-      stack: ['React', 'Video.js', 'TensorFlow.js', 'WebRTC'],
-      image: '/img/projects/lms-preview.jpg',
-      link: 'https://lms.example.com',
-      github: 'https://github.com/username/lms',
-    },
-  ];
+  const { allProjects } = projectsData;
 
   return (
     <Layout title="Projects | ask-t" description="A collection of web applications and digital experiences">

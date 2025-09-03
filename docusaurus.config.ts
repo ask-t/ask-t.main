@@ -58,6 +58,12 @@ const config: Config = {
             copyright: `Copyright © ${new Date().getFullYear()} ask-t.`,
             language: 'en',
           },
+          blogTitle: 'Technical Blog',
+          blogDescription: 'Insights on web development, architecture, and technology',
+          blogSidebarTitle: 'Recent Posts',
+          blogSidebarCount: 5,
+          postsPerPage: 10,
+          archiveBasePath: 'archive',
         },
         theme: {
           customCss: './src/css/custom.css',

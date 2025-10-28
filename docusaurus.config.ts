@@ -18,15 +18,14 @@ const config: Config = {
   plugins: [],
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://ask-t.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  // For Vercel deployment, use '/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  // Vercel deployment config
+  organizationName: 'ask-t',
+  projectName: 'ask-t-portfolio',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -45,7 +44,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/asktakahashi/ask-t.main-1/tree/main/',
         },
         blog: {
           showReadingTime: true,
@@ -86,14 +85,14 @@ const config: Config = {
         { to: '/projects', label: 'Projects', position: 'left' },
         { to: '/blog', label: 'Writing', position: 'left' },
         { to: '/docs/intro', label: 'Docs', position: 'left' },
-        { href: 'mailto:you@example.com', label: 'Contact', position: 'right' },
+        { href: 'mailto:ask@example.com', label: 'Contact', position: 'right' },
       ],
     },
     footer: {
       style: 'dark',
       links: [
         { title: 'Work', items: [{ label: 'Projects', to: '/projects' }, { label: 'Writing', to: '/blog' }] },
-        { title: 'Connect', items: [{ label: 'GitHub', href: 'https://github.com/...' }, { label: 'Twitter', href: 'https://twitter.com/...' }] },
+        { title: 'Connect', items: [{ label: 'GitHub', href: 'https://github.com/asktakahashi' }, { label: 'LinkedIn', href: 'https://linkedin.com/in/asktakahashi' }] },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} ask-t. Built with Docusaurus.`,
     },

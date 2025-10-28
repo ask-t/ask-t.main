@@ -16,6 +16,14 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/docs/(.*)",
+      "dest": "/docs/$1"
+    },
+    {
+      "src": "/blog/(.*)",
+      "dest": "/blog/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

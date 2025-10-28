@@ -2,46 +2,48 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# ドキュメント
 
-Let's discover **Docusaurus in less than 5 minutes**.
+ask-tのポートフォリオサイトに関するドキュメントへようこそ。
 
-## Getting Started
+## 利用可能なドキュメント
 
-Get started by **creating a new site**.
+### [Writing ガイド](./writing-guide.md)
+ブログ記事とプロジェクト情報を更新する方法について詳しく説明しています。コンテンツの追加や編集に必要な手順を確認できます。
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## サイトの概要
 
-### What you'll need
+このポートフォリオサイトは以下の技術で構築されています：
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+- **フレームワーク**: Docusaurus
+- **言語**: TypeScript, React
+- **スタイリング**: Tailwind CSS
+- **デプロイ**: GitHub Pages
 
-## Generate a new site
+## 開発環境のセットアップ
 
-Generate a new Docusaurus site using the **classic template**.
+### 必要な環境
 
-The classic template will automatically be added to your project after you run the command:
+- [Node.js](https://nodejs.org/en/download/) バージョン 18.0以上
+- npm または yarn
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
+### 開発サーバーの起動
 
 ```bash
-cd my-website
-npm run start
+npm install
+npm start
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+開発サーバーが起動すると、http://localhost:3000 でサイトを確認できます。
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+### ビルド
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+```bash
+npm run build
+```
+
+本番環境用のビルドが `build/` ディレクトリに生成されます。
+
+## サポート
+
+質問や問題がある場合は、プロジェクトのメンテナーに連絡してください。

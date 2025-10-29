@@ -23,12 +23,21 @@ const config: Config = {
   // For Vercel deployment, use '/'
   baseUrl: '/',
 
+  // Vercel specific configuration
+  trailingSlash: false,
+
+  // Ensure proper baseUrl handling
+  baseUrlIssueBanner: false,
+
   // Vercel deployment config
   organizationName: 'ask-t',
   projectName: 'ask-t-portfolio',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+
+  // Vercel specific settings
+  noIndex: false,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

@@ -16,21 +16,12 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/docs/(.*)",
-      "dest": "/docs/$1"
-    },
-    {
-      "src": "/blog/(.*)",
-      "dest": "/blog/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
   "env": {
-    "NODE_ENV": "production",
-    "NEXT_TELEMETRY_DISABLED": "1"
+    "NODE_ENV": "production"
   },
   "buildCommand": "npm run build",
   "outputDirectory": "build",
